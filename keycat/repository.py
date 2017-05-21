@@ -1,5 +1,5 @@
 import abc
-from models import Button, Shortcut, ShortcutStat, ButtonStat
+from .models import Button, Shortcut, ShortcutStat, ButtonStat
 
 
 class BaseRepository(object):

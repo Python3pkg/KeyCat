@@ -1,12 +1,12 @@
-from mouse_events import FixedSizeScreenshotEventCreator
-from events import EventReceiver
-from screen import ScreenshotTaker, ScreenManager
-from repository import ButtonRepository, ShortcutRepository, ShortcutStatRepository, ButtonStatRepository
-from button_matcher import ButtonMatcher
-from template_matcher import CCOEFFNORMEDTemplateMatcher
-from database import *
-from program_identifier import *
-from statistic import StatisticCollector
+from .mouse_events import FixedSizeScreenshotEventCreator
+from .events import EventReceiver
+from .screen import ScreenshotTaker, ScreenManager
+from .repository import ButtonRepository, ShortcutRepository, ShortcutStatRepository, ButtonStatRepository
+from .button_matcher import ButtonMatcher
+from .template_matcher import CCOEFFNORMEDTemplateMatcher
+from .database import *
+from .program_identifier import *
+from .statistic import StatisticCollector
 
 session = get_database_scoped_session()
 button_repository = ButtonRepository(session)

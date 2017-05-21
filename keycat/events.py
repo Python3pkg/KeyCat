@@ -1,5 +1,5 @@
-from notify import *
-from button_matcher import Click
+from .notify import *
+from .button_matcher import Click
 
 
 class EventReceiver(object):
@@ -20,7 +20,7 @@ class EventReceiver(object):
             new_effectiveness = self.statistic_collector.calculate_button_effectiveness_statistic(button)
 
             message = "To do this action try pressing : " \
-                      + " or ".join(map(lambda x: x.get_keycodes_in_readable_format(), button.shortcuts))
+                      + " or ".join([x.get_keycodes_in_readable_format() for x in button.shortcuts])
             message += " " + self._get_effectiveness_message(old_effectiveness, new_effectiveness)
             Notify.show_notification(message)
 

@@ -1,4 +1,4 @@
-from models import ShortcutStat, ButtonStat
+from .models import ShortcutStat, ButtonStat
 
 
 class StatisticCollector(object):
@@ -14,7 +14,7 @@ class StatisticCollector(object):
         if button_stat is not None:
             button_hit_count = button_stat.hit_count
 
-        shortcuts_hit_count = sum(map(lambda x: self._get_shortcut_stat(x).hit_count, button.shortcuts))
+        shortcuts_hit_count = sum([self._get_shortcut_stat(x).hit_count for x in button.shortcuts])
 
         total_action_count = button_hit_count + shortcuts_hit_count
 
